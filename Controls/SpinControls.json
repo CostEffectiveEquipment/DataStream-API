@@ -1,0 +1,311 @@
+{
+   "controlModules":[
+      {
+         "name":"center",
+         "label":"Centering Routine",
+         "supportedActions":{
+            "runtimeControl":{
+               "settings":{
+                  "label":"Center Wafer",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"<body>",
+                  "userControls":[
+                     {
+                        "label":"Center",
+                        "value":"center"
+                     },
+                     {
+                        "label":"Vac ON",
+                        "value":"vacOn"
+                     },
+                     {
+                        "label":"Vac OFF",
+                        "value":"vacOff"
+                     }
+                  ]
+               },
+               "parameters":[
+                  {
+                     "label":"Title",
+                     "name":"title",
+                     "units":"",
+                     "type":"list",
+                     "choice":[
+                        {
+                           "label":"Speed",
+                           "value":"<speed>"
+                        },
+                        {
+                           "label":"ChuckVac",
+                           "value":"<chuckVac>"
+                        },
+                        {
+                           "label":"Press OK or close the lid to continue.",
+                           "value":"Press OK or close the lid to continue."
+                        }
+                     ]
+                  },
+                  {
+                     "label":"Body",
+                     "name":"body",
+                     "units":"",
+                     "type":"list",
+                     "choice":[
+                        {
+                           "label":"ChuckVac",
+                           "value":"<chuckVac>"
+                        },
+                        {
+                           "label":"Speed",
+                           "value":"<speed>"
+                        },
+                        {
+                           "label":"Please center the wafer",
+                           "value":"Please center the wafer"
+                        }
+                     ]
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "name":"servo",
+         "label":"Spin Speed",
+         "supportedActions":{
+            "set":{
+               "settings":{
+                  "label":"Set",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Set Spin Speed to <speed> rpm (<osc> sec oscillation)"
+               },
+               "parameters":[
+                  {
+                     "label":"Speed",
+                     "name":"speed",
+                     "type":"number",
+                     "units":"rpm",
+                     "min":0,
+                     "max":12000,
+                     "precision":0
+                  },
+                  {
+                     "label":"Accel",
+                     "name":"accel",
+                     "type":"number",
+                     "units":"rpm/s",
+                     "min":1,
+                     "max":30000,
+                     "precision":0
+                  },
+                  {
+                     "label":"Osc",
+                     "name":"osc",
+                     "type":"number",
+                     "units":"seconds",
+                     "min":0,
+                     "max":99.0,
+                     "precision":1
+                  }
+               ]
+            },
+         }
+      },
+      {
+         "name":"exhaust",
+         "label":"Programmable Exhaust",
+         "supportedActions":{
+            "set":{
+               "settings":{
+                  "label":"Set",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Set exhaust to <percent> %",
+                  "first":true
+               },
+               "parameters":[
+                  {
+                     "label":"Percent",
+                     "name":"percent",
+                     "type":"number",
+                     "units":"%",
+                     "min":0,
+                     "max":100,
+                     "precision":0
+                  }
+               ]
+            },
+            "home":{
+               "settings":{
+                  "label":"Go Home",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Have the exhaust re-home itself"
+               },
+               "parameters":{
+                  
+               }
+            },
+            "step":{
+               "settings":{
+                  "label":"Step",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Step exhaust <stepDir> <stepSize> %"
+               },
+               "parameters":[
+                  {
+                     "label":"Step Size",
+                     "name":"stepSize",
+                     "units":"%",
+                     "type":"number",
+                     "min":0,
+                     "max":100,
+                     "precision":0
+                  },
+                  {
+                     "label":"Direction",
+                     "name":"stepDir",
+                     "units":"",
+                     "type":"list",
+                     "choice":[
+                        {
+                           "label":"Up",
+                           "value":"up"
+                        },
+                        {
+                           "label":"Down",
+                           "value":"down"
+                        }
+                     ]
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "name":"dispense",
+         "label":"Dispense",
+         "supportedActions":{
+            "set":{
+               "settings":{
+                  "label":"Enable Dispenses",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Dispenses ON: <value>"
+               },
+               "parameters":[
+                  {
+                     "label":"Value",
+                     "name":"value",
+                     "units":"",
+                     "type":"multiselect",
+                     "choice":[
+                        {
+                           "label":"Dispense 1",
+                           "value":"1"
+                        },
+                        {
+                           "label":"Dispense 2",
+                           "value":"2"
+                        },
+                        {
+                           "label":"Dispense 3",
+                           "value":"3"
+                        },
+                        {
+                           "label":"Dispense 4",
+                           "value":"4"
+                        },
+                        {
+                           "label":"Dispense 5",
+                           "value":"5"
+                        },
+                        {
+                           "label":"Dispense 6",
+                           "value":"6"
+                        },
+                        {
+                           "label":"Dispense 7",
+                           "value":"7"
+                        },
+                        {
+                           "label":"Dispense 8",
+                           "value":"8"
+                        },
+                        {
+                           "label":"Dispense 9",
+                           "value":"9"
+                        },
+                        {
+                           "label":"Dispense 10",
+                           "value":"10"
+                        },
+                        {
+                           "label":"Dispense 11",
+                           "value":"11"
+                        },
+                        {
+                           "label":"Dispense 12",
+                           "value":"12"
+                        },
+                        {
+                           "label":"Dispense 13",
+                           "value":"13"
+                        },
+                        {
+                           "label":"Dispense 14",
+                           "value":"14"
+                        },
+                        {
+                           "label":"Dispense 15",
+                           "value":"15"
+                        },
+                        {
+                           "label":"Dispense 16",
+                           "value":"16"
+                        }
+                     ]
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "name":"chuckVac",
+         "label":"Chuck Vac",
+         "supportedActions":{
+            "set":{
+               "settings":{
+                  "label":"Set",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Chuck Vac <vac> (<threshold> kPA)"
+               },
+               "parameters":[
+                  {
+                     "label":"Vacuum",
+                     "name":"vac",
+                     "units":"",
+                     "type":"list",
+                     "choice":[
+                        {
+                           "label":"On",
+                           "value":"on"
+                        },
+                        {
+                           "label":"Off",
+                           "value":"off"
+                        }
+                     ]
+                  },
+                  {
+                     "label":"Threshold",
+                     "name":"threshold",
+                     "type":"number",
+                     "units":"kPA",
+                     "min":0,
+                     "max":300,
+                     "precision":1
+                  }
+               ]
+            }
+         }
+      }
+   ]
+}

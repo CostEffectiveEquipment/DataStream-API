@@ -1,0 +1,92 @@
+{
+   "notificationModules":[
+      {
+         "name":"systemNotifications",
+         "label":"System Notifications",
+         "supportedActions":{
+            "sendEmail":{
+               "settings":{
+                  "label":"Send Email",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"To: <to>: <subject>"
+               },
+               "parameters":[
+                  {
+                     "label":"To",
+                     "name":"to",
+                     "type":"text",
+                     "units":null
+                  },
+                  {
+                     "label":"Subject",
+                     "name":"subject",
+                     "type":"text",
+                     "units":null
+                  },
+                  {
+                     "label":"Body",
+                     "name":"body",
+                     "type":"text",
+                     "units":null
+                  }
+               ]
+            }
+         }
+      }
+   ],
+   "promptModules":[
+      {
+         "name":"userNotifications",
+         "label":"User Notifications",
+         "supportedActions":{
+            "userAcknowledge":{
+               "settings":{
+                  "label":"Prompt User",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"<body>"
+               },
+               "parameters":[
+                  {
+                     "label":"Title",
+                     "name":"title",
+                     "type":"text",
+                     "units":null
+                  },
+                  {
+                     "label":"Body",
+                     "name":"body",
+                     "type":"text",
+                     "units":null
+                  }
+               ]
+            }
+         }
+      }
+   ],
+   "delayModules":[
+      {
+         "name":"fixedTime",
+         "label":"Fixed Time Delays",
+         "supportedActions":{
+            "delay":{
+               "settings":{
+                  "label":"Wait",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Wait <time> Seconds"
+               },
+               "parameters":[
+                  {
+                     "label":"Value",
+                     "name":"time",
+                     "type":"number",
+                     "units":"Seconds",
+                     "min":0.1,
+                     "max":21600,
+                     "precision":1
+                  }
+               ]
+            }
+         }
+      }
+   ]
+}

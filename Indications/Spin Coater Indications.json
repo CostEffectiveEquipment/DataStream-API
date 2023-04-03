@@ -1,0 +1,279 @@
+{
+   "indications":[
+      {
+         "name":"speed",
+         "label":"Spin Speed",
+         "units":"rpm",
+         "type":"number",
+         "tolerance":{
+            "type":"relative",
+            "warnRangeHigh":10.0,
+            "inRangeHigh":5.0,
+            "inRangeLow":5.0,
+            "warnRangeLow":10.0
+         },
+         "queries":[
+            "current",
+            "setpoint",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":false,
+            "availableAsRuntimeCondition":true,
+            "precision":0
+         }
+      },
+      {
+         "name":"accel",
+         "label":"Spin Acceleration",
+         "units":"rpm/s",
+         "type":"number",
+         "tolerance":{
+            "type":"relative",
+            "warnRangeHigh":10.0,
+            "inRangeHigh":5.0,
+            "inRangeLow":5.0,
+            "warnRangeLow":10.0
+         },
+         "queries":[
+            "current",
+            "setpoint",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":false,
+            "availableAsRuntimeCondition":false,
+            "precision":0
+         }
+      },
+      {
+         "name":"exhaust",
+         "label":"Percent Exhaust",
+         "units":"%",
+         "type":"number",
+         "tolerance":{
+            "type":"relative",
+            "warnRangeHigh":20.0,
+            "inRangeHigh":10.0,
+            "inRangeLow":10.0,
+            "warnRangeLow":20.0
+         },
+         "queries":[
+            "current",
+            "setpoint",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":false,
+            "availableAsRuntimeCondition":false,
+            "precision":0
+         }
+      },
+      {
+         "name":"dispense",
+         "label":"Active Dispenses",
+         "units":"",
+         "type":"multiselect",
+         "tolerance":null,
+         "queries":[
+            "current",
+            "setpoint",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":false,
+            "availableAsRuntimeCondition":false
+         },
+         "map":{
+            "1":"Dispense 1",
+            "2":"Dispense 2",
+            "3":"Dispense 3",
+            "4":"Dispense 4",
+            "5":"Dispense 5",
+            "6":"Dispense 6",
+            "7":"Dispense 7",
+            "8":"Dispense 8",
+            "9":"Dispense 9",
+            "10":"Dispense 10",
+            "11":"Dispense 11",
+            "12":"Dispense 12",
+            "13":"Dispense 13",
+            "14":"Dispense 14",
+            "15":"Dispense 15",
+            "16":"Dispense 16"
+         }
+      },
+      {
+         "name":"dispenseEmpties",
+         "label":"Dispense Source Empty",
+         "units":"",
+         "type":"multiselect",
+         "tolerance":{
+            "type":"shouldNotInclude",
+            "dangerHigh":[
+               
+            ],
+            "warnHigh":[
+               
+            ],
+            "inRange":[
+               
+            ],
+            "warnLow":[
+               
+            ],
+            "dangerLow":[
+               "1",
+               "2",
+               "3",
+               "4",
+               "5",
+               "6",
+               "7",
+               "8",
+               "9",
+               "10",
+               "11",
+               "12",
+               "13",
+               "14",
+               "15",
+               "16"
+            ]
+         },
+         "queries":[
+            "current",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":true,
+            "availableAsRuntimeCondition":true
+         },
+         "map":{
+            "1":"Source 1",
+            "2":"Source 2",
+            "3":"Source 3",
+            "4":"Source 4",
+            "5":"Source 5",
+            "6":"Source 6",
+            "7":"Source 7",
+            "8":"Source 8",
+            "9":"Source 9",
+            "10":"Source 10",
+            "11":"Source 11",
+            "12":"Source 12",
+            "13":"Source 13",
+            "14":"Source 14",
+            "15":"Source 15",
+            "16":"Source 16"
+         }
+      },
+      {
+         "name":"chuckVac",
+         "label":"Chuck Vac",
+         "units":"kPa",
+         "type":"number",
+         "tolerance":{
+            "type":"absolute",
+            "warnRangeHigh":100,
+            "inRangeHigh":100,
+            "inRangeLow":0,
+            "warnRangeLow":0
+         },
+         "queries":[
+            "current",
+            "setpoint",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":false,
+            "availableAsRuntimeCondition":true,
+            "precision":1
+         }
+      },
+      {
+         "name":"wasteFull",
+         "label":"Waste Bottle Full",
+         "units":"",
+         "type":"boolean",
+         "tolerance":{
+            "type":"boolean",
+            "enabled":true
+         },
+         "queries":[
+            "current",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":true,
+            "availableAsRuntimeCondition":false
+         }
+      },
+      {
+         "name":"ambientTemp",
+         "label":"Ambient Temperature",
+         "units":"°C",
+         "type":"number",
+         "tolerance":{
+            "type":"absolute",
+            "warnRangeHigh":23.0,
+            "inRangeHigh":22.0,
+            "inRangeLow":20.0,
+            "warnRangeLow":19.0
+         },
+         "queries":[
+            "current",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":true,
+            "availableAsRuntimeCondition":true,
+            "precision":1
+         }
+      },
+      {
+         "name":"humidity",
+         "label":"Humidity",
+         "units":"%",
+         "type":"number",
+         "tolerance":{
+            "type":"absolute",
+            "warnRangeHigh":50.0,
+            "inRangeHigh":45.0,
+            "inRangeLow":35.0,
+            "warnRangeLow":30.0
+         },
+         "queries":[
+            "current",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":true,
+            "availableAsRuntimeCondition":true,
+            "precision":1
+         }
+      },
+      {
+         "name":"vibration",
+         "label":"Vibration",
+         "units":"",
+         "type":"number",
+         "tolerance":{
+            "type":"absolute",
+            "warnRangeHigh":4000.0,
+            "inRangeHigh":400.0,
+            "inRangeLow":0.0,
+            "warnRangeLow":0.0
+         },
+         "queries":[
+            "current",
+            "tolerance"
+         ],
+         "settings":{
+            "availableAsPrecondition":true,
+            "availableAsRuntimeCondition":true,
+            "precision":0
+         }
+      }
+   ]
+}

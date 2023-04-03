@@ -1,0 +1,240 @@
+{
+   "controlModules":[
+      {
+         "name":"lowerTemp",
+         "label":"Plate Temperature",
+         "supportedActions":{
+            "enable":{
+               "settings":{
+                  "label":"Enable",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"<value> temperature controller"
+               },
+               "parameters":[
+                  {
+                     "label":"Value",
+                     "name":"value",
+                     "type":"list",
+                     "units":"",
+                     "choice":[
+                        {
+                           "label":"Enable",
+                           "value":true
+                        },
+                        {
+                           "label":"Disable",
+                           "value":false
+                        }
+                     ]
+                  }
+               ]
+            },
+            "set":{
+               "settings":{
+                  "label":"Set",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Set temperature to <value> °C",
+                  "first":true
+               },
+               "parameters":[
+                  {
+                     "label":"Value",
+                     "name":"value",
+                     "type":"number",
+                     "units":"°C",
+                     "min":20,
+                     "max":300,
+                     "precision":1
+                  }
+               ]
+            },
+            "autotune":{
+               "settings":{
+                  "label":"AutoTune",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Auto-tune temperature controller for set temperature. This improves temp control at given setting. Need to set desired plate temperature and enable controller before running this. May take a long time (potentially hours)"
+               },
+               "parameters":[
+                  
+               ]
+            },
+            "ramp":{
+               "settings":{
+                  "label":"Ramp",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Ramp temperature to <target> @ <rate> °C / minute"
+               },
+               "parameters":[
+                  {
+                     "label":"Target",
+                     "name":"target",
+                     "units":"°C",
+                     "type":"number",
+                     "min":0,
+                     "max":300,
+                     "precision":1
+                  },
+                  {
+                     "label":"Rate",
+                     "name":"rate",
+                     "units":"°C / Minute",
+                     "type":"number",
+                     "min":0.1,
+                     "max":6.0
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "name":"liftPins",
+         "label":"Lift Pins",
+         "supportedActions":{
+            "set":{
+               "settings":{
+                  "label":"Set",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Set lift pins to <height> mm",
+                  "first":true
+               },
+               "parameters":[
+                  {
+                     "label":"Height",
+                     "name":"height",
+                     "type":"number",
+                     "units":"mm",
+                     "min":0,
+                     "max":19.0,
+                     "precision":2
+                  }
+               ]
+            },
+            "home":{
+               "settings":{
+                  "label":"Go Home",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Have the liftpins re-home themselves"
+               },
+               "parameters":{
+                  
+               }
+            },
+            "step":{
+               "settings":{
+                  "label":"Step",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Step lift pins <stepDir> <stepSize> mm"
+               },
+               "parameters":[
+                  {
+                     "label":"Step Size",
+                     "name":"stepSize",
+                     "units":"mm",
+                     "type":"number",
+                     "min":0,
+                     "max":19.0,
+                     "precision":1
+                  },
+                  {
+                     "label":"Direction",
+                     "name":"stepDir",
+                     "units":"",
+                     "type":"list",
+                     "choice":[
+                        {
+                           "label":"Up",
+                           "value":"up"
+                        },
+                        {
+                           "label":"Down",
+                           "value":"down"
+                        }
+                     ]
+                  }
+               ]
+            },
+            "raise":{
+               "settings":{
+                  "label":"Raise Pins",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Raise Lift Pins to LiftPin Idle Position"
+               },
+               "parameters":{
+                  
+               }
+            },
+            "lower":{
+               "settings":{
+                  "label":"Lower Pins",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Lower Lift Pins"
+               },
+               "parameters":{
+                  
+               }
+            },
+            "ramp":{
+               "settings":{
+                  "label":"Ramp",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Ramp liftpins to <target> at <rate> mm/minute"
+               },
+               "parameters":[
+                  {
+                     "label":"Target",
+                     "name":"target",
+                     "type":"number",
+                     "units":"mm",
+                     "min":0,
+                     "max":19.0,
+                     "precision":1
+                  },
+                  {
+                     "label":"Rate",
+                     "name":"rate",
+                     "units":"mm/min",
+                     "type":"number",
+                     "min":0.05,
+                     "max":200.0
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "name":"plate",
+         "label":"Bake Method",
+         "supportedActions":{
+            "set":{
+               "settings":{
+                  "label":"Select Method",
+                  "availableInRecipe":true,
+                  "descriptionFormat":"Bake using <port> method"
+               },
+               "parameters":[
+                  {
+                     "label":"Method",
+                     "name":"port",
+                     "units":"",
+                     "type":"list",
+                     "choice":[
+                        {
+                           "label":"Vacuum",
+                           "value":"vac"
+                        },
+                        {
+                           "label":"Proximity",
+                           "value":"prox"
+                        },
+                        {
+                           "label":"Contact",
+                           "value":"none"
+                        }
+                     ]
+                  }
+               ]
+            }
+         }
+      }
+   ]
+}
